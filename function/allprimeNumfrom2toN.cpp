@@ -1,32 +1,32 @@
 #include <iostream>
 using namespace std;
 
-void checkPrime(int num){
-    int count = 0;
-    for(int i=2; i<num; i++){ // i=1
-        // int flag = i;          //i =1
-        for(int j=1; j<=i; j++){ 
-            if(i % j == 0 ){
-                count++;//1
-            }
-            if(count == 2){
-                cout<<i;
-               
-            }
+bool isPrime(int num) {
+    if (num < 2) return false;  
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) {
+            return false;
         }
-        // if(count == 2){
-        //     cout<<i;
-           
-        // }
-        break;
     }
-      
-    }
-int main(){
-    int num;
-    cout<<"Enter a number ";
-    cin>>num;
-    checkPrime(num);
-
+    return true;
 }
 
+void printPrimes(int N) {
+    cout << "Prime numbers from 2 to " << N << " are: ";
+    for (int i = 2; i <= N; i++) {
+        if (isPrime(i)) {
+            cout << i << " ";
+        }
+    }
+    cout << endl;
+}
+
+int main() {
+    int N;
+    cout << "Enter the value of N: ";
+    cin >> N;
+    
+    printPrimes(N);
+
+    return 0;
+}
