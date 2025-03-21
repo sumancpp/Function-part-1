@@ -2,7 +2,7 @@
 using namespace std;
 int calfact(int num){
     int fact = 1;
-    for(int i=1; i<=num; i++){
+    for(int i = 1; i <= num; i++){
         fact *= i;
     }
     return fact;
@@ -17,7 +17,7 @@ int calnCr (int n, int r){
  
 int main (){
     int n = 8, r = 2;
-   cout<<calnCr(n,r);
+   cout<<calnCr(n, r);
 
     return 0;
 }
